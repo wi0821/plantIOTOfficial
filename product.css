@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
+
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Noto Sans TC', sans-serif;
+}
+
+body
+{
+	background: url(image/bg.jpg);
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	background-blend-mode: soft-light;
+
+}
+
+header
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding: 0 100px;
+	background: #262626;
+	width: 100%;
+	z-index: 1000;
+	box-sizing: border-box;
+}
+
+header .logo
+{
+	height: 50px;
+	float: left;
+}
+
+header .logo img
+{
+	margin-left: -20px;
+	float: left;
+	height: 50px;
+	transition: .8s;
+	cursor: pointer;
+}
+
+header .logo img:hover
+{
+	height: 60px;
+}
+
+header nav
+{
+	float: right;
+}
+
+header nav ul
+{
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+header nav ul li
+{
+	list-style: none;
+}
+
+header nav ul li a
+{
+	height: 50px;
+	line-height: 50px;
+	padding: 0 20px;
+	color: #fff;
+	text-decoration: none;
+	display: block;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active
+{
+	color: #fff;
+	background: #2196f3;
+}
+
+.container.active
+{
+	display: none;
+}
+
+
+.menu-toggle
+{
+	color: #fff;
+	float: right;
+	line-height: 60px;
+	font-size: 30px;
+	cursor: pointer;
+	display: none;
+}
+
+/*以下為新加入*/
+.container
+{
+	position: relative;
+	width: 1000px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	margin: 50px 250px;
+}
+
+.container .card
+{
+	position: relative;
+	height: 250px;
+	background: #fff;
+	display: flex;
+	width: 45%;
+	margin: 30px 0;
+}
+
+.container .card .imgBx
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #333;
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	transition: 0.5s ease-in-out;
+}
+
+.container .card:hover .imgBx
+{
+	width: 150px;
+	height: 150px;
+	left: -60px; /*75*/
+	top: calc(50% - 60px); /*75*/
+	transition: 0.5s ease-in-out;
+	background: #fff59d;
+}
+
+.container .card .imgBx:before
+{
+	content: attr(data-text);
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	font-size: 6em;
+	color: rgba(255,255,255,.05);
+	font-weight: 600;
+}
+
+.container .card .imgBx img
+{
+	max-width: 100px;
+	transition: 0.5s ease-in-out;
+}
+
+.container .card:hover .imgBx img
+{
+	max-width: 75px;
+}
+
+.container .card .content
+{
+	position: absolute;
+	right: 0;
+	width: calc(100% - 75px);
+	height: 100%;
+	padding: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container .card .content h3
+{
+	margin-bottom: 5px;
+	font-size: 24px;
+}
+
+.image
+{
+	margin-left: 10px;
+	align-items: center;
+	height: 125px;
+	width: 125px;
+}
+
+/*以上為新加入*/
+
+
+@media (max-width: 991px)
+{
+
+	header
+	{
+		padding: 0 20px;
+	}
+
+	.menu-toggle
+	{
+		display: block;
+	}
+
+	header .logo img
+	{
+		margin: 5px;
+	}
+
+	header .logo img:hover
+	{
+		height: 50px;
+	}
+
+	header nav
+	{
+		position: absolute;
+		width: 100%;
+		height: calc(100vh - 50px);
+		background: #333;
+		top: 50px;
+		left: -100%;
+		transition: .5s;
+	}
+
+	header nav.active
+	{
+		left: 0;
+	}
+
+	header nav ul
+	{
+		display: block;
+		text-align: center;
+	}
+
+	header nav ul li a
+	{
+		border-bottom: 1px solid rgba(0,0,0,.2);
+	}
+
+	/*以下為新加入*/
+	.container
+	{
+		width: 100%;
+		flex-direction: column;
+		align-items: center;
+		margin: 50px 0;
+	}
+
+	.container .card
+	{
+		width: 400px;
+	}
+	/*以上為新加入*/
+}
+
+@media (max-width: 768px)
+{
+	.container .card
+	{
+		max-width: 300px;
+		flex-direction: column;
+		height: auto;
+	}
+
+	.container .card .imgBx
+	{
+		position: relative;
+		font-size: .5em;
+		background: #fff59d;
+	}
+
+	.container .card .second
+	{
+		background: #ffffcf !important;
+	}
+
+	.container .card .imgBx:before
+	{
+		height: 100%;
+	}
+	.container .card .imgBx,
+	.container .card:hover .imgBx
+	{
+		width: 100%;
+		height: 200px;
+		left: 0;
+	}
+
+	.container .card .imgBx img,
+	.container .card:hover .imgBx img
+	{
+		max-width: 100px;
+	}
+
+	.container .card .content
+	{
+		position: relative;
+		width: 100%;
+	}
+}

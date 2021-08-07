@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
+
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Noto Sans TC', sans-serif;
+}
+
+body
+{
+	background: url(image/bg.jpg);
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	background-blend-mode: soft-light;
+	height: 100vh;
+}
+
+header
+{
+	position: fixed; /*新加入*/
+	top: 0;
+	left: 0;
+	padding: 0 100px;
+	background: #262626;
+	width: 100%;
+	z-index: 1000; /*新加入*/
+	box-sizing: border-box;
+}
+
+header .logo
+{
+	height: 50px;
+	float: left;
+}
+
+header .logo img
+{
+	margin-left: -20px;
+	float: left;
+	height: 50px;
+	transition: .8s;
+	cursor: pointer;
+}
+
+header .logo img:hover
+{
+	height: 60px;
+}
+
+header nav
+{
+	float: right;
+}
+
+header nav ul
+{
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+header nav ul li
+{
+	list-style: none;
+}
+
+header nav ul li a
+{
+	height: 50px;
+	line-height: 50px;
+	padding: 0 20px;
+	color: #fff;
+	text-decoration: none;
+	display: block;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active
+{
+	color: #fff;
+	background: #2196f3;
+}
+
+.contentBx.active,
+.controls.active
+{
+	display: none;
+}
+
+
+.menu-toggle
+{
+	color: #fff;
+	float: right;
+	line-height: 60px;
+	font-size: 30px;
+	cursor: pointer;
+	display: none;
+}
+
+/*以下為新加入*/
+.banner
+{
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+}
+
+.banner .imgBx
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.banner .imgBx img
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	opacity: 0;
+	transition: .5s;
+	background-position: center;
+}
+
+.banner .imgBx img.active
+{
+	opacity: 1;
+}
+
+.controls
+{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 80px;
+}
+
+.right
+{
+	right: 0;
+}
+
+.controls li /*方塊*/
+{
+	position: relative;
+	width: 80px;
+	height: 80px;
+	background: #fff;
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.controls li:hover
+{
+	background: #55efc4;
+}
+
+.controls li:before
+{
+	content: '';
+	position: relative;
+	width: 20px;
+	height: 20px;
+	border-left: 4px solid #111; /*箭頭上半部*/
+	border-bottom: 4px solid #111; /*箭頭下半部*/
+	transform: rotate(45deg);
+}
+
+.right li:before
+{
+	transform: rotate(225deg);
+}
+
+.contentBx
+{
+	position: absolute;
+	bottom: 0;
+	width: 450px;
+	max-width: 700px;
+}
+
+.contentBx div
+{
+	display: none;
+}
+
+.contentBx div.active
+{
+	display: block;
+	padding: 30px;
+	padding-left: 60px;
+	background: rgba(0,0,0,0.6);
+}
+
+.contentBx div h2
+{
+	color: #fff;
+	font-size: 2em;
+	letter-spacing: 5px;
+	margin-bottom: 15px;
+	font-weight: 800;
+
+}
+
+.contentBx div p
+{
+	color: #fff;
+	font-size: 1.3em;
+}
+
+/*以上為新加入*/
+
+
+@media (max-width: 991px)
+{
+
+	header
+	{
+		padding: 0 20px;
+	}
+
+	.menu-toggle
+	{
+		display: block;
+	}
+
+	header .logo img
+	{
+		margin: 5px;
+	}
+
+	header .logo img:hover
+	{
+		height: 50px;
+	}
+
+	header nav
+	{
+		position: absolute;
+		width: 100%;
+		height: calc(100vh - 50px);
+		background: #333;
+		top: 50px;
+		left: -100%;
+		transition: .5s;
+	}
+
+	header nav.active
+	{
+		left: 0;
+	}
+
+	header nav ul
+	{
+		display: block;
+		text-align: center;
+	}
+
+	header nav ul li a
+	{
+		border-bottom: 1px solid rgba(0,0,0,.2);
+	}
+
+	/*以下為新加入*/
+	.contentBx
+	{
+		width: 100%;
+	}
+
+	.controls
+	{
+		display: flex;
+		width: 85px;
+		height: 150px;
+	}
+
+	.contentBx div h2
+	{
+		text-align: center;
+	}
+
+	.contentBx div a
+	{
+		justify-content: center;
+		align-items: center;
+		margin: 0 50px;
+		letter-spacing: 5px;
+	}
+	/*以上為新加入*/
+}
+

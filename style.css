@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
+
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Noto Sans TC', sans-serif;
+}
+
+body
+{
+	background: url(image/bg.jpg);
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	background-blend-mode: soft-light;
+}
+
+header
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding: 0 100px;
+	background: #262626;
+	width: 100%;
+	z-index: 1000;
+	box-sizing: border-box;
+}
+
+header .logo
+{
+	height: 50px;
+	float: left;
+}
+
+header .logo img
+{
+	margin-left: -20px;
+	float: left;
+	height: 50px;
+	transition: .8s;
+	cursor: pointer;
+}
+
+header .logo img:hover
+{
+	height: 60px;
+}
+
+header nav
+{
+	float: right;
+}
+
+header nav ul
+{
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+header nav ul li
+{
+	list-style: none;
+}
+
+header nav ul li a
+{
+	height: 50px;
+	line-height: 50px;
+	padding: 0 20px;
+	color: #fff;
+	text-decoration: none;
+	display: block;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active
+{
+	color: #fff;
+	background: #2196f3;
+}
+
+.banner.active,
+{
+	display: none;
+}
+
+.menu-toggle
+{
+	color: #fff;
+	float: right;
+	line-height: 60px;
+	font-size: 30px;
+	cursor: pointer;
+	display: none;
+}
+
+.swiper-container
+{
+	height: 750px;
+	width: 100%;
+}
+
+.swiper-slide
+{	
+	display: flex;
+	display: -webkit-box;
+	display: -webkit-flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+}
+
+/*以下為新加入*/
+.banner
+{
+	position: relative;
+	width: 100%;
+}
+
+.imgBx img
+{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	background-position: center;
+}
+
+.contentBx
+{
+	position: absolute;
+	bottom: 0;
+	width: 450px;
+	max-width: 700px;
+	display: block;
+	padding: 30px;
+	padding-left: 45px;
+	background: rgba(0,0,0,0.6);
+}
+
+
+.contentBx h2
+{
+	color: #fff;
+	font-size: 2.5em;
+	letter-spacing: 15px;
+	margin-bottom: 15px;
+	font-weight: 800;
+}
+
+.contentBx p
+{
+	color: #fff;
+	font-size: 1.3em;
+	line-height: 30px;
+}
+
+.swiper-button-next,
+.swiper-button-prev
+{
+	top: 50%;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover
+{
+	color: #55efc4;
+	transition: .6s;
+}
+
+/*以上為新加入*/
+
+
+@media (max-width: 991px)
+{
+
+	header
+	{
+		padding: 0 20px;
+	}
+
+	.menu-toggle
+	{
+		display: block;
+	}
+
+	header .logo img
+	{
+		margin: 5px;
+	}
+
+	header .logo img:hover
+	{
+		height: 50px;
+	}
+
+	header nav
+	{
+		position: absolute;
+		width: 100%;
+		height: calc(100vh - 50px);
+		background: #333;
+		top: 50px;
+		left: -100%;
+		transition: .5s;
+	}
+
+	header nav.active
+	{
+		left: 0;
+	}
+
+	header nav ul
+	{
+		display: block;
+		text-align: center;
+	}
+
+	header nav ul li a
+	{
+		border-bottom: 1px solid rgba(0,0,0,.2);
+	}
+
+	/*以下為新加入*/
+	.swiper-container,.imgBx
+	{
+		height: 780px;
+	}
+
+	.contentBx
+	{
+		width: 100%;
+		padding: 20px;
+		padding-left: 20px;
+	}
+
+	.contentBx h2
+	{
+		font-size: 2em;
+		text-align: center;
+		letter-spacing: 20px;
+	}
+
+	.contentBx p
+	{
+		letter-spacing: 3px;
+		text-align: center;
+		line-height: 40px;
+	}
+
+	.swiper-button-next::after,
+	.swiper-button-prev::after
+	{
+		display: none;
+	}
+
+	/*以上為新加入*/
+}
+
